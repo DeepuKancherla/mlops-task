@@ -1,0 +1,68 @@
+2026-06-09 11:59:34,645 - INFO - Job Started
+2026-06-09 11:59:34,652 - INFO - Config Loaded: seed=42, window=5, version=v1
+2026-06-09 11:59:34,677 - INFO - Rows Loaded: 10001
+2026-06-09 11:59:34,679 - ERROR - Job Failed
+Traceback (most recent call last):
+  File "C:\Users\me\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\window\rolling.py", line 353, in _prep_values
+    values = values.to_numpy(np.float64, na_value=np.nan)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\me\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\arrays\numpy_.py", line 589, in to_numpy
+    result = np.asarray(result, dtype=dtype)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: could not convert string to float: 'close'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\me\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\window\rolling.py", line 436, in _apply_series
+    values = self._prep_values(obj._values)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\me\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\window\rolling.py", line 357, in _prep_values
+    raise TypeError(f"cannot handle this type -> {values.dtype}") from err
+TypeError: cannot handle this type -> str
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\mlops-task\run.py", line 102, in main
+    df = process_data(
+         ^^^^^^^^^^^^^
+  File "D:\Projects\mlops-task\run.py", line 49, in process_data
+    .mean()
+     ^^^^^^
+  File "C:\Users\me\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\window\rolling.py", line 2653, in mean
+    return super().mean(
+           ^^^^^^^^^^^^^
+  File "C:\Users\me\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\window\rolling.py", line 1706, in mean
+    return self._apply(window_func, name="mean", numeric_only=numeric_only)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\me\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\window\rolling.py", line 595, in _apply
+    return self._apply_columnwise(homogeneous_func, name, numeric_only)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\me\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\window\rolling.py", line 456, in _apply_columnwise
+    return self._apply_series(homogeneous_func, name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\me\AppData\Local\Programs\Python\Python311\Lib\site-packages\pandas\core\window\rolling.py", line 438, in _apply_series
+    raise DataError("No numeric types to aggregate") from err
+pandas.errors.DataError: No numeric types to aggregate
+2026-06-09 12:02:30,050 - INFO - Job Started
+2026-06-09 12:02:30,050 - INFO - Config Loaded: seed=42, window=5, version=v1
+2026-06-09 12:02:30,077 - INFO - Rows Loaded: 10001
+2026-06-09 12:02:30,081 - INFO - Rolling Mean Computed
+2026-06-09 12:02:30,082 - INFO - Signal Generated
+2026-06-09 12:02:30,082 - INFO - Metrics: {'version': 'v1', 'rows_processed': 10001, 'metric': 'signal_rate', 'value': 0.4989, 'latency_ms': 31, 'seed': 42, 'status': 'success'}
+2026-06-09 12:02:30,082 - INFO - Job Completed Successfully
+2026-06-09 12:15:42,588 - INFO - Job Started
+2026-06-09 12:15:42,588 - INFO - Config Loaded: seed=42, window=5, version=v1
+2026-06-09 12:15:42,613 - INFO - Rows Loaded: 10001
+2026-06-09 12:15:42,614 - INFO - Rolling Mean Computed
+2026-06-09 12:15:42,614 - INFO - Signal Generated
+2026-06-09 12:15:42,615 - INFO - Metrics: {'version': 'v1', 'rows_processed': 10001, 'metric': 'signal_rate', 'value': 0.4989, 'latency_ms': 27, 'seed': 42, 'status': 'success'}
+2026-06-09 12:15:42,615 - INFO - Job Completed Successfully
+2026-06-09 12:47:12,969 - INFO - Job Started
+2026-06-09 12:47:12,970 - INFO - Config Loaded: seed=42, window=5, version=v1
+2026-06-09 12:47:12,989 - INFO - Rows Loaded: 10001
+2026-06-09 12:47:12,992 - INFO - Rolling Mean Computed
+2026-06-09 12:47:12,992 - INFO - Signal Generated
+2026-06-09 12:47:12,993 - INFO - Metrics: {'version': 'v1', 'rows_processed': 10001, 'metric': 'signal_rate', 'value': 0.4989, 'latency_ms': 22, 'seed': 42, 'status': 'success'}
+2026-06-09 12:47:12,993 - INFO - Job Completed Successfully
